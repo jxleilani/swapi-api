@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+header {
+  height: 10vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.starships-box {
+  margin: 2rem;
+  background: #000000;
+  max-width: 600px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.ship {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  color: #ffffff;
+  border: solid 1px #ffffff;
+  margin: 10px;
+}
+.ship button {
+  cursor: pointer;
+  margin-left: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.pilots {
+  position: absolute;
+  top:0;
+  left: 20%;
+  width: 60vw;
+  height: 60vh;
+  background: #fff;
+  z-index: 1;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hide {
+  display: none;
 }
