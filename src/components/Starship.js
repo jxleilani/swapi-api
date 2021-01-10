@@ -9,25 +9,20 @@ function Starship({ item }) {
 
   const pilotArr = [];
 
-  const noResults = `Sorry, there were no pilots for ${item.name}! Please try another.`
-  
+  const noResults = `Sorry, there were no pilots for ${item.name}! Please try another.`;
+
   useEffect(() => {
     item.pilots.forEach((pilot) => {
       Axios.get(pilot)
-      .then(res => pilotArr.push(res.data.name))
-      .then(() => {
-        console.log(pilotArr);
-      })
-      .then(() => setPilots(pilotArr))
-      .then(() => console.log(pilot))
-      .catch(err => console.log(err));
+        .then((res) => pilotArr.push(res.data.name))
+        .then(() => setPilots(pilotArr))
+        .catch((err) => console.log(err));
     });
     // eslint-disable-next-line
-  },[]);
+  }, []);
 
   const handleViewPilots = () => {
     setHide(!hide);
-    // getPilots();
   };
 
   const handleClose = () => {
@@ -38,8 +33,8 @@ function Starship({ item }) {
     <div className="ship">
       <p>{item.name}</p>
       <button onClick={handleViewPilots}>View Pilots</button>
-        <div className={hide ? "pilots hide" : "pilots"}>
-          <p>{pilots ? noResults : pilots.join(", ")}</p>
+      <div className={hide ? "pilots hide" : "pilots"}>
+        <p>{pilots ? noResults : pilots.join(", ")}</p>
         <button className="btn-close" onClick={handleClose}>
           X
         </button>

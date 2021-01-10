@@ -1,10 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function Pilot({ pilots }) {
-  return (
-    <p>Hello {pilots.join(", ")}</p>
-    
-  )
+  return <p>Hello {pilots.join(", ")}</p>;
 }
 
-export default Pilot
+export default Pilot;

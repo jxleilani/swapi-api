@@ -1,17 +1,16 @@
-import React, { Component } from 'react';
-import getStarships from './utils/API';
-import Starship from './Starship';
+import React, { Component } from "react";
+import getStarships from "./utils/API";
+import Starship from "./Starship";
 
 class Starships extends Component {
   state = {
-    starships: []
-  }
+    starships: [],
+  };
 
   componentDidMount() {
     getStarships()
       .then((res) => {
         this.setState({ starships: res.data.results });
-        console.log(this.state.starships);
       })
       .catch((err) => console.log(err));
   }
@@ -19,13 +18,17 @@ class Starships extends Component {
   render() {
     return (
       <div className="starships-box">
-        {this.state.starships.map(item => (
-          <Starship key={item.name} item={item} name={item.name} pilots={item.pilots} />
+        {this.state.starships.map((item) => (
+          <Starship
+            key={item.name}
+            item={item}
+            name={item.name}
+            pilots={item.pilots}
+          />
         ))}
-        
       </div>
-    )
+    );
   }
 }
 
-export default Starships
+export default Starships;
