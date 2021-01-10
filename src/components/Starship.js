@@ -34,7 +34,7 @@ function Starship({ item }) {
       <p>{item.name}</p>
       <button onClick={handleViewPilots}>View Pilots</button>
       <div className={hide ? "pilots hide" : "pilots"}>
-        <p>{pilots ? noResults : pilots.join(", ")}</p>
+        <p>{pilots ? pilots.join(", ") : noResults}</p>
         <button className="btn-close" onClick={handleClose}>
           X
         </button>
