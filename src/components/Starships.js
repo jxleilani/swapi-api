@@ -20,7 +20,7 @@ class Starships extends Component {
     return (
       <div className="starships-box">
         {this.state.starships.map(item => (
-          <Starship key={item.name} item={item} />
+          <Starship key={item.name} item={item} name={item.name} pilots={item.pilots} />
         ))}
         
       </div>
