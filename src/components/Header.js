@@ -3,9 +3,9 @@ import React from "react";
 function Header() {
   return (
     <header>
-      <h1>
-        Starwars API using<span>swapi.dev</span>
-      </h1>
+      <div className="title">
+        Star Wars API using<span><a href="https://swapi.dev/">swapi.dev</a></span>
+      </div>
     </header>
   );
 }
