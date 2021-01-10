@@ -13,6 +13,12 @@ function Starship({ item }) {
 
   useEffect(() => {
     item.pilots.forEach((pilot) => {
+      // Issue with deployed link and http vs https error. However, the code below is not fully working.
+      // let fixUrl = pilot.split("");
+      // fixUrl.splice(4, 0, "s");
+      // fixUrl.join("");
+      // pass fixUrl into line 22
+
       Axios.get(pilot)
         .then((res) => pilotArr.push(res.data.name))
         .then(() => setPilots(pilotArr))
