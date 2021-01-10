@@ -18,6 +18,12 @@ class Starships extends Component {
   render() {
     return (
       <div className="starships-box">
+        <div className="force">
+          <div className="clip">
+            <h2>May the Force be with you!</h2>
+          </div>
+          <p>Click on View Pilots to see who has piloted each starship.</p>
+        </div>
         {this.state.starships.map((item) => (
           <Starship
             key={item.name}

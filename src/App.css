@@ -71,3 +71,27 @@ header span a {
 .hide {
   display: none;
 }
+.force {
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 50px;
+}
+.force .clip {
+  font-size: 20px;
+  background: linear-gradient(to right, #ffd901, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,#0005);
+  margin-bottom: 40px;
+}
+@media screen and (max-width: 520px) {
+  .force {
+    margin: 20px;
+  }
+  .force .clip {
+    font-size: 16px;
+  }
+}
