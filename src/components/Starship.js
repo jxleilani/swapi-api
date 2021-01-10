@@ -8,6 +8,8 @@ function Starship({ item }) {
   const [pilots, setPilots] = useState([]);
 
   const pilotArr = [];
+
+  const noResults = `Sorry, there were no pilots for ${item.name}! Please try another.`
   
   useEffect(() => {
     item.pilots.forEach((pilot) => {
@@ -37,8 +39,7 @@ function Starship({ item }) {
       <p>{item.name}</p>
       <button onClick={handleViewPilots}>View Pilots</button>
         <div className={hide ? "pilots hide" : "pilots"}>
-          <p>Help</p>
-          <p>{pilots.join(", ")}</p>
+          <p>{pilots ? noResults : pilots.join(", ")}</p>
         <button className="btn-close" onClick={handleClose}>
           X
         </button>
