@@ -4,7 +4,21 @@
   box-sizing: border-box;
 }
 header {
-  height: 10vh;
+  display: flex;
+  background: linear-gradient(to right, #090020, #47853f);
+  height: 5rem;
+  color: #fff;
+  align-items: center;
+}
+header .title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin: 20px;
+}
+header span {
+  font-weight: 400;
+  font-style: italic;
+  color: rgb(111, 248, 77);
 }
 .starships-box {
   margin: 2rem;
