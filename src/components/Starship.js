@@ -13,15 +13,15 @@ function Starship({ item }) {
 
   useEffect(() => {
     item.pilots.forEach((pilot) => {
-      // Issue with deployed link and http vs https error. However, the code below is not fully working.
-      // let fixUrl = pilot.split("");
-      // fixUrl.splice(4, 0, "s");
-      // fixUrl.join("");
-      // pass fixUrl into line 22
+      let fixUrl = pilot.split("");
+      fixUrl.splice(4, 0, "s");
+      fixUrl.join("");
+      const newUrl = fixUrl.join("")
 
-      Axios.get(pilot)
+      Axios.get(newUrl)
         .then((res) => pilotArr.push(res.data.name))
         .then(() => setPilots(pilotArr))
+        .then(() => console.log(pilots))
         .catch((err) => console.log(err));
     });
     // eslint-disable-next-line
@@ -40,7 +40,7 @@ function Starship({ item }) {
       <p>{item.name}</p>
       <button onClick={handleViewPilots}>View Pilots</button>
       <div className={hide ? "pilots hide" : "pilots"}>
-        <p>{pilots ? pilots.join(", ") : noResults}</p>
+        <p>{pilots.length>0 ? pilots.join(", ") : noResults}</p>
         <button className="btn-close" onClick={handleClose}>
           X
         </button>
