@@ -21,7 +21,6 @@ function Starship({ item }) {
       Axios.get(newUrl)
         .then((res) => pilotArr.push(res.data.name))
         .then(() => setPilots(pilotArr))
-        .then(() => console.log(pilots))
         .catch((err) => console.log(err));
     });
     // eslint-disable-next-line
