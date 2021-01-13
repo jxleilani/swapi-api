@@ -16,7 +16,7 @@ function Starship({ item }) {
       let fixUrl = pilot.split("");
       fixUrl.splice(4, 0, "s");
       fixUrl.join("");
-      const newUrl = fixUrl.join("")
+      const newUrl = fixUrl.join("");
 
       Axios.get(newUrl)
         .then((res) => pilotArr.push(res.data.name))
@@ -39,7 +39,7 @@ function Starship({ item }) {
       <p>{item.name}</p>
       <button onClick={handleViewPilots}>View Pilots</button>
       <div className={hide ? "pilots hide" : "pilots"}>
-        <p>{pilots.length>0 ? pilots.join(", ") : noResults}</p>
+        <p>{pilots.length > 0 ? pilots.join(", ") : noResults}</p>
         <button className="btn-close" onClick={handleClose}>
           X
         </button>

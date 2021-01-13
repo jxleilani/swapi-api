@@ -93,5 +93,6 @@ header span a {
   }
   .force .clip {
     font-size: 16px;
+    -webkit-box-reflect:unset;
   }
 }
